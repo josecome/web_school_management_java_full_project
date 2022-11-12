@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscricao_sub" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="beeaee82-7f74-46df-9bf3-b65675b01e02">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codigo_est" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     cadeiras_estudantes.`ID` AS cadeiras_estudantes_ID,
+     cadeiras_estudantes.`codigo_est` AS cadeiras_estudantes_codigo_est,
+     cadeiras_estudantes.`cadeira` AS cadeiras_estudantes_cadeira,
+     cadeiras_estudantes.`staff` AS cadeiras_estudantes_staff,
+     cadeiras_estudantes.`staff_ed` AS cadeiras_estudantes_staff_ed,
+     cadeiras_estudantes.`dia_dig` AS cadeiras_estudantes_dia_dig,
+     cadeiras_estudantes.`dia_dig_ed` AS cadeiras_estudantes_dia_dig_ed,
+     cadeiras_estudantes.`hora_dig` AS cadeiras_estudantes_hora_dig,
+     cadeiras_estudantes.`hora_dig_ed` AS cadeiras_estudantes_hora_dig_ed,
+     cadeiras_estudantes.`username` AS cadeiras_estudantes_username,
+     cadeiras_estudantes.`username_ed` AS cadeiras_estudantes_username_ed,
+     cadeiras_estudantes.`hostname` AS cadeiras_estudantes_hostname,
+     cadeiras_estudantes.`hostname_ed` AS cadeiras_estudantes_hostname_ed,
+     cadeiras_estudantes.`macc` AS cadeiras_estudantes_macc,
+     cadeiras_estudantes.`macc_ed` AS cadeiras_estudantes_macc_ed
+FROM
+     `cadeiras_estudantes` cadeiras_estudantes
+WHERE cadeiras_estudantes.`codigo_est` = $P{codigo_est}]]>
+	</queryString>
+	<field name="cadeiras_estudantes_ID" class="java.lang.Integer"/>
+	<field name="cadeiras_estudantes_codigo_est" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_cadeira" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_staff" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_staff_ed" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_dia_dig" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_dia_dig_ed" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_hora_dig" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_hora_dig_ed" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_username" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_username_ed" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_hostname" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_hostname_ed" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_macc" class="java.lang.String"/>
+	<field name="cadeiras_estudantes_macc_ed" class="java.lang.String"/>
+	<group name="cadeiras_estudantes_codigo_est">
+		<groupExpression><![CDATA[$F{cadeiras_estudantes_codigo_est}]]></groupExpression>
+	</group>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="49" height="14" uuid="b4fd1abd-9c1d-4174-831d-8f5413b49ac0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cadeiras]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="14" width="259" height="1" uuid="395e28a9-6bde-4985-a7c3-53f1c1c54c50"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="14" uuid="ed040a49-acbd-41cd-86c8-1a31fb0697e2"/>
+				<textFieldExpression><![CDATA[$F{cadeiras_estudantes_cadeira}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

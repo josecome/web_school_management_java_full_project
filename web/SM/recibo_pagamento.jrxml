@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="recibo_pagamento" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a9bb8ad5-a5da-4802-972a-fb5214df240d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="72"/>
+	<parameter name="rec" class="java.lang.String"/>
+	<parameter name="dest" class="java.lang.String"/>
+	<parameter name="cod_est" class="java.lang.String"/>
+	<parameter name="nome" class="java.lang.String"/>
+	<parameter name="nivel" class="java.lang.String"/>
+	<parameter name="curso" class="java.lang.String"/>
+	<parameter name="vd" class="java.lang.String"/>
+	<parameter name="vp" class="java.lang.String"/>
+	<parameter name="banco" class="java.lang.String"/>
+	<parameter name="ref" class="java.lang.String"/>
+	<parameter name="talao" class="java.lang.String"/>
+	<parameter name="usuario" class="java.lang.String"/>
+	<parameter name="pag_nr" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select id from mthly_payments where id = 0]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="484" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="75" width="65" height="14" uuid="1dfcbb40-2226-460c-a55a-1e44dbd0bbb7"/>
+				<text><![CDATA[Recibo nr:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="89" width="65" height="14" uuid="3d86e346-d1fa-456d-a7d2-2008594fbcd9"/>
+				<text><![CDATA[Destino pag.:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="103" width="555" height="1" uuid="9af63551-6207-4b13-9360-e3a5a9f41a19"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="120" width="107" height="14" uuid="6eea212a-27a6-4ee2-a6f7-5135a618d53b"/>
+				<text><![CDATA[Codigo do Estudante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="119" width="32" height="14" uuid="6c3ea024-a102-4fe7-89f6-a03e0e08eb91"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="65" y="89" width="86" height="14" uuid="731ec0ad-c391-497d-a46b-1c11420d42d9"/>
+				<textFieldExpression><![CDATA[$P{dest}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="240" y="120" width="316" height="14" uuid="bcb83085-b826-460c-9e5d-1c2e5f59f6c1"/>
+				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="108" y="120" width="100" height="14" uuid="768f2bec-9127-4db3-ba62-6744f4da1f14"/>
+				<textFieldExpression><![CDATA[$P{cod_est}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="118" width="554" height="1" uuid="b389d922-9746-4bc2-b0b5-3683a4dfd6ec"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="103" width="34" height="14" uuid="56551b7c-4474-4d35-8a21-dc7269da82e2"/>
+				<text><![CDATA[Curso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="104" width="29" height="14" uuid="d7582934-7b06-4c0a-b102-7d88435ff3d9"/>
+				<text><![CDATA[Nivel:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="134" width="555" height="1" uuid="3e417dee-b35d-4916-bb9e-3fae21ec73c4"/>
+			</line>
+			<staticText>
+				<reportElement x="151" y="75" width="70" height="14" uuid="47e7523b-0e55-4737-8823-c0a8b0d8801c"/>
+				<text><![CDATA[Valor a pagar:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="89" width="70" height="14" uuid="4850a254-5021-4b17-a74a-a12d1e40d98d"/>
+				<text><![CDATA[Valor pago:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="381" y="104" width="100" height="14" uuid="0f46bdfd-7eed-4c99-9fdf-92a588ecb5d7"/>
+				<textFieldExpression><![CDATA[$P{nivel}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="34" y="104" width="100" height="14" uuid="44c2cdbf-e188-42e2-8b61-17b953388a59"/>
+				<textFieldExpression><![CDATA[$P{curso}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="221" y="75" width="79" height="14" uuid="c6706637-45a9-47f7-b865-f03b78fc12b3"/>
+				<textFieldExpression><![CDATA[$P{vd}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="221" y="90" width="79" height="14" uuid="0e04b1d1-2e10-40a2-88e6-80da37ded99f"/>
+				<textFieldExpression><![CDATA[$P{vp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="301" y="75" width="59" height="14" uuid="e4e33e15-5657-4335-bfd1-3555f09a1750"/>
+				<text><![CDATA[Referencia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="89" width="59" height="14" uuid="b925750f-c4e7-452a-b111-7741537b25af"/>
+				<text><![CDATA[Talao nr:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="89" width="39" height="14" uuid="74f16a45-0460-4d13-a3f2-3d6b35994981"/>
+				<text><![CDATA[Banco:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="108" y="193" width="273" height="1" uuid="7f6eeaa5-95a3-4792-9242-191bda228030"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="196" y="157" width="100" height="20" uuid="77cf7814-ee47-4419-9ea2-9eb750a74c23"/>
+				<textFieldExpression><![CDATA[$P{usuario}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="196" y="194" width="100" height="20" uuid="c5743fab-bc69-4bb4-ab16-35932e4840e4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="223" width="555" height="1" uuid="03f68b3e-19f8-4b03-a651-b65adb4ea1c8"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="382" width="555" height="1" uuid="78e0aa5d-f712-4186-b470-8c3a1c0450a1"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="34" y="352" width="100" height="14" uuid="69647b3a-d0ec-4258-bd55-349ef934eb77"/>
+				<textFieldExpression><![CDATA[$P{curso}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="221" y="323" width="80" height="14" uuid="765f16f6-a2cb-48d2-a46d-4167c31cd9ee"/>
+				<textFieldExpression><![CDATA[$P{vd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="302" y="323" width="59" height="14" uuid="58a176d0-ce45-4897-90eb-462c8bda1483"/>
+				<text><![CDATA[Referencia:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="221" y="338" width="80" height="14" uuid="59da4efe-892f-4195-b0a9-d8943155522d"/>
+				<textFieldExpression><![CDATA[$P{vp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="351" width="34" height="14" uuid="f7885f82-b26f-45e1-b635-cae3abf32901"/>
+				<text><![CDATA[Curso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="323" width="65" height="14" uuid="09777d92-e9d4-48a7-8440-2292dd466a31"/>
+				<text><![CDATA[Recibo nr:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="351" width="555" height="1" uuid="e6e4b471-3443-4f5f-8f49-1300f21bc3bd"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="337" width="65" height="14" uuid="49b7200b-270e-45ab-a0f3-13e1f0a1a15a"/>
+				<text><![CDATA[Destino pag.:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="65" y="337" width="86" height="14" uuid="133b1a0c-c1f8-453f-9cd9-bbcb2979a607"/>
+				<textFieldExpression><![CDATA[$P{dest}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="208" y="367" width="32" height="14" uuid="5f64a98c-d380-40c8-b9a0-4595f84787cf"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="368" width="107" height="14" uuid="e032bf2e-3622-482c-a089-b2077c9b9f97"/>
+				<text><![CDATA[Codigo do Estudante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="352" width="29" height="14" uuid="1fa6420c-b893-4298-beaf-ec383bc6850c"/>
+				<text><![CDATA[Nivel:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="323" width="70" height="14" uuid="a44621ad-1b72-48ec-a984-9ed5166205e0"/>
+				<text><![CDATA[Valor a pagar:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="196" y="405" width="100" height="20" uuid="bafcc406-283f-419c-b98c-391f91fbb9bf"/>
+				<textFieldExpression><![CDATA[$P{usuario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="151" y="337" width="70" height="14" uuid="ec4f6c62-8007-4894-a506-01f7647df1e8"/>
+				<text><![CDATA[Valor pago:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="240" y="368" width="316" height="14" uuid="befd8268-3640-4d99-88f7-88e713cb8dfb"/>
+				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="366" width="554" height="1" uuid="0f4850bf-4f2b-4dcb-9a9b-0b9541fa1dec"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="381" y="352" width="100" height="14" uuid="999e8053-b881-4062-b87e-0518adb5b489"/>
+				<textFieldExpression><![CDATA[$P{nivel}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="302" y="337" width="59" height="14" uuid="448d0d74-7a57-4409-8a24-26f5a0fe14e9"/>
+				<text><![CDATA[Talao nr:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="108" y="368" width="100" height="14" uuid="75cb1522-a0c7-4eec-94d6-633f6ed504d8"/>
+				<textFieldExpression><![CDATA[$P{cod_est}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="196" y="442" width="100" height="20" uuid="44219003-ed39-4cf0-85e7-7af5e68c7c79"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="461" y="337" width="39" height="14" uuid="3e4cee33-5f2f-4e21-aa31-f8194af9c514"/>
+				<text><![CDATA[Banco:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="108" y="441" width="273" height="1" uuid="e348af83-29fb-4bd2-9277-132270db6dd8"/>
+			</line>
+			<textField>
+				<reportElement x="500" y="89" width="55" height="14" uuid="27f146b6-a803-4b6c-ac1e-ac1455e3d7c3"/>
+				<textFieldExpression><![CDATA[$P{banco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="75" width="195" height="14" uuid="39123fa5-feba-42ad-b167-92ceb618c14f"/>
+				<textFieldExpression><![CDATA[$P{ref}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="90" width="100" height="14" uuid="a1fbca2c-9ce0-46e0-94f9-384d317b0252"/>
+				<textFieldExpression><![CDATA[$P{talao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="337" width="55" height="14" uuid="85aef7b1-15c9-4207-a59e-d8b246052adc"/>
+				<textFieldExpression><![CDATA[$P{banco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="323" width="194" height="14" uuid="8240a766-eb75-4636-96c7-cca71cfa3109"/>
+				<textFieldExpression><![CDATA[$P{ref}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="338" width="100" height="14" uuid="90bb79f4-5d48-4e4d-91b4-b88f4c5db3ca"/>
+				<textFieldExpression><![CDATA[$P{talao}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="196" y="0" width="122" height="59" uuid="d586832b-a1b7-47a2-94fb-9eec88f22ec1"/>
+				<imageExpression><![CDATA["C:\\relatorios\\imac_logo.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="196" y="233" width="122" height="59" uuid="73acf559-fd0c-4f10-8549-0fd7fc0e544b"/>
+				<imageExpression><![CDATA["C:\\relatorios\\imac_logo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="65" y="323" width="86" height="14" uuid="79eef13d-f83d-4e45-862b-11421f01dfaa"/>
+				<textFieldExpression><![CDATA[$P{pag_nr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="75" width="86" height="14" uuid="7a45209d-c3da-4622-915f-6e579912185e"/>
+				<textFieldExpression><![CDATA[$P{pag_nr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
